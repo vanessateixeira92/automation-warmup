@@ -1,0 +1,22 @@
+{
+  "name": "automation-warmup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanessateixeira92/automation-warmup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessateixeira92/automation-warmup/issues"
+  },
+  "homepage": "https://github.com/vanessateixeira92/automation-warmup#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.9.1"
+  }
+}

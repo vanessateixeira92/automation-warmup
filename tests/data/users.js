@@ -44,7 +44,7 @@ export const USERS = [
     name: "Steve Jones",
     email: "steve@example.com",
     password: "Joao#1234",
-    countryLabel: 'United States of America"',
+    countryLabel: "United States of America",
     countryValue: "usa",
     gender: "Male",
     genderValue: "male",

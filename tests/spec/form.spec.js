@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { USERS, MESSAGES } from "./data/form.js";
+import { USERS, FORM_MESSAGES } from "../data/users";
 
 test.describe("Form", () => {
   test.beforeEach(async ({ page }) => {
@@ -7,7 +7,7 @@ test.describe("Form", () => {
   });
 
   for (const user of USERS) {
-    const title = `Form submission - ${user.name}, ${user.country}, ${user.gender}`;
+    const title = `Form submission - ${user.name}, ${user.countryLabel},  ${user.gender}, ${user.hobbies} `;
 
     test(title, async ({ page }) => {
       await test.step("Fill and submit the form", async () => {
@@ -17,10 +17,10 @@ test.describe("Form", () => {
           .getByRole("textbox", { name: "Password *" })
           .fill(user.password);
 
-        await page.getByLabel("Country *").selectOption(user.country);
+        await page.getByLabel("Country *").selectOption(user.countryValue);
 
         await page
-          .locator(`input[type="radio"][value="${user.gender}"]`)
+          .locator(`input[type="radio"][value="${user.genderValue}"]`)
           .check();
       });
 
@@ -35,8 +35,8 @@ test.describe("Form", () => {
       });
 
       await test.step("Check success message", async () => {
-        await expect(page.getByText(MESSAGES.success.message1)).toBeVisible();
-        await expect(page.getByText(MESSAGES.success.message2)).toBeVisible();
+        await expect(page.getByText(FORM_MESSAGES.successTitle)).toBeVisible();
+        await expect(page.getByText(FORM_MESSAGES.successBody)).toBeVisible();
       });
     });
   }

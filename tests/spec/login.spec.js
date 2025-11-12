@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { USERS, MESSAGES } from "../data/users";
+import { USERS, MESSAGES } from "../data/login.js";
 
 test.describe("Login", () => {
   test.beforeEach(async ({ page }) => {
